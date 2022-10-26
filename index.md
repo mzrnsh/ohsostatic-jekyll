@@ -14,5 +14,7 @@ title: "Home"
     </span>
   </h1>
 
-  <h2>To build something beautiful with it ✌️</h2>
+  <h2>
+    To build something beautiful with it ✌️
+  </h2>
 </div>
