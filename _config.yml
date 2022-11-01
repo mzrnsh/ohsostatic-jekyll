@@ -1,6 +1,6 @@
-url: 'https://jekyll.staticguides.com'
+url: 'https://jekyll.ohsosstatic.com'
 baseurl: ''
-title: 'Jekyll Guides'
+title: 'OhSoStatic Jekyll'
 
 plugins:
   - jekyll-postcss
