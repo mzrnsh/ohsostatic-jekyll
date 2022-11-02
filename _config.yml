@@ -1,9 +1,11 @@
-url: 'https://jekyll.ohsosstatic.com'
+url: 'https://jekyll.ohsostatic.com'
 baseurl: ''
 title: 'OhSoStatic Jekyll'
 
 plugins:
   - jekyll-postcss
+
+permalink: /:categories/:title
 
 postcss:
   cache: false
