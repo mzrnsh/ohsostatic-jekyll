@@ -14,4 +14,3 @@ exclude:
   - tailwind.config.js
   - yarn.lock
   - README.md
-  - CNAME
