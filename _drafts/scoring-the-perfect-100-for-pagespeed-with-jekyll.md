@@ -1,15 +1,13 @@
 ---
 layout: post
-title: How to add Tailwind CSS to existing Jekyll site
-date: 2022-10-31 02:16 +0400
+title: Scoring the perfect 100 for PageSpeed with Jekyll
 image:
-  file: "jekyll-tailwind.png"
-  alt: "Jekyll and Tailwind CSS logos"
+  file: pagespeed.png
+  alt: "Google PageSpeed score: 100"
 ---
 
-Here will be a post on how to add Tailwind CSS to an existing Jekyll website Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id tellus congue dolor mollis bibendum.
-
-Duis ullamcorper ac metus sit amet fringilla. Donec posuere justo orci, eget rutrum erat bibendum id. Duis ornare mi vel nibh molestie malesuada.
+Here will be a post on how to score the perfect 100/100 score in Google
+PageSpeed Insights with your Jekyll website Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id tellus congue dolor mollis bibendum. Duis ullamcorper ac metus sit amet fringilla. Donec posuere justo orci, eget rutrum erat bibendum id. Duis ornare mi vel nibh molestie malesuada.
 
 Suspendisse potenti. Morbi lacus purus, tempor non magna quis, efficitur finibus magna. Sed placerat turpis quis consectetur fermentum. Cras fringilla lacus sodales leo ultrices, sed varius ipsum lacinia. Aliquam tellus ex, suscipit placerat tempus nec, tincidunt et tellus. Ut congue et elit in mollis. Mauris ut pellentesque turpis. Praesent eu leo porttitor, iaculis ligula vel, mattis sapien. Quisque vel turpis vel tortor malesuada suscipit eu sed nibh. Integer ac leo faucibus, pretium nisi non, consequat est. Aliquam erat volutpat. Sed blandit eros sit amet arcu maximus consectetur.
 
