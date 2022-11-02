@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - name: Build site
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
@@ -20,4 +30,3 @@ jobs:
       - uses: helaili/jekyll-action@2.0.5
         env:
           JEKYLL_PAT: ${{ github.token }}
-          NODE_ENV: production
