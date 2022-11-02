@@ -4,13 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
-    <title>How to add Tailwind CSS to existing Jekyll site &middot; OhSoStatic Jekyll</title>
+    <title>Using Tailwind CSS with Jekyll on GitHub Pages &middot; OhSoStatic Jekyll</title>
 
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   </head>
 
-  <body class="bg-slate-900 text-slate-400 font-light min-h-full">
+  <body class="bg-slate-900 text-slate-300 font-light min-h-full">
     <header class="p-4 max-w-5xl mx-auto flex justify-between items-center">
       <a href="/">
         <img src="/assets/img/logo.svg" class="w-60">
@@ -87,25 +87,36 @@
 
     <main class="bg-slate-800">
   <div class="p-4 max-w-5xl mx-auto">
-    <article id="post" class="my-12">
-      <header class="mb-8">
-        <h1 class="
-          text-white text-2xl font-normal leading-7 sm:text-3xl
-          sm:tracking-tight
-        ">
-          How to add Tailwind CSS to existing Jekyll site
-        </h1>
-      </header>
+    <article id="post" class="
+      my-12 prose max-w-none prose-slate lg:prose-lg prose-headings:font-medium
+      prose-p:text-slate-300 prose-headings:text-slate-50
+      prose-a:text-cyan-400 prose-strong:text-slate-300
+    ">
+      <h1>
+        Using Tailwind CSS with Jekyll on GitHub Pages
+      </h1>
 
-      <p>Here will be a post on how to add Tailwind CSS to an existing Jekyll website Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id tellus congue dolor mollis bibendum.</p>
+      <p><strong>OhSoStatic Jekyll</strong> is built with Jekyll, styled with Tailwind CSS, and hosted
+on GitHub Pages. This setup doesn’t work out of box: Tailwind CSS requires
+PostCSS to compile, and because of this, it won’t be included in the default
+build produced by GitHub Pages. In this article we will discuss how to fix this
+via GitHub Actions.</p>
 
-<p>Duis ullamcorper ac metus sit amet fringilla. Donec posuere justo orci, eget rutrum erat bibendum id. Duis ornare mi vel nibh molestie malesuada.</p>
+<h2 id="prerequisite-a-jekyll--tailwind-css-site-that-works-locally">Prerequisite: a Jekyll + Tailwind CSS site that works locally</h2>
 
-<p>Suspendisse potenti. Morbi lacus purus, tempor non magna quis, efficitur finibus magna. Sed placerat turpis quis consectetur fermentum. Cras fringilla lacus sodales leo ultrices, sed varius ipsum lacinia. Aliquam tellus ex, suscipit placerat tempus nec, tincidunt et tellus. Ut congue et elit in mollis. Mauris ut pellentesque turpis. Praesent eu leo porttitor, iaculis ligula vel, mattis sapien. Quisque vel turpis vel tortor malesuada suscipit eu sed nibh. Integer ac leo faucibus, pretium nisi non, consequat est. Aliquam erat volutpat. Sed blandit eros sit amet arcu maximus consectetur.</p>
+<p>I am assuming you already have a Tailwind CSS based Jekyll website that works
+fine on your local machine. Then you tried to deploy it to GitHub Pages and no
+styles were applied, and that’s why you are here. If this is not true, and
+you’re looking for general help on how to use Tailwind CSS with Jekyll, look no
+further than this <a href="https://mzrn.sh/2022/04/09/starting-a-blank-jekyll-site-with-tailwind-css-in-2022/" target="_blank">brilliant article</a>.</p>
 
-<p>Nunc in nisi a magna scelerisque molestie. Ut maximus ex eget ante accumsan, vel placerat felis congue. Cras ut eros elit. Cras vitae porttitor arcu. Sed vehicula sollicitudin nibh, sed fringilla est vehicula eu. Nulla purus neque, vehicula at gravida quis, cursus sed felis. Nunc efficitur, ex vel hendrerit finibus, libero erat consequat nibh, id pellentesque quam dolor id lorem. Nullam placerat scelerisque risus sit amet facilisis. Ut eu placerat lacus. Quisque ac dolor imperdiet nibh viverra ullamcorper congue nec eros. Integer tincidunt gravida commodo. Nulla arcu nibh, pulvinar at augue ac, consequat commodo turpis.</p>
+<h2 id="step-1-create-github-action">Step 1: create GitHub Action</h2>
 
-<p>In urna nisl, venenatis id dolor a, auctor hendrerit nulla. Suspendisse potenti. Nullam nec ante lacus. Nullam vel augue auctor, tempus turpis sit amet, finibus justo. Fusce facilisis interdum ullamcorper. Etiam gravida enim eget sagittis facilisis. Aenean gravida lacus ac nulla molestie, sit amet accumsan sapien porttitor. Phasellus elit velit, ultricies ac tempor quis, feugiat sit amet neque. Etiam velit nisi, egestas sed ligula nec, consectetur scelerisque nibh. Fusce aliquet enim nec enim rhoncus, vel consequat ipsum sollicitudin. Maecenas tempor lectus vel lacus interdum, eget pretium massa feugiat.</p>
+<p>…</p>
+
+<h2 id="step-2-configure-github-pages">Step 2: configure GitHub Pages</h2>
+
+<p>…</p>
 
     </article>
   </div>
