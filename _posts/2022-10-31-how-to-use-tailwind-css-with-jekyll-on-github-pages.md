@@ -36,7 +36,7 @@ bundle lock --add-platform x86_64-linux
 
 ## Step 2: confirm Jekyll config is correct
 
-This step is tehnically not related to this tutorial, but it's quite possible
+This step is technically not related to this tutorial, but it's quite possible
 that someone might dismiss a working setup as broken because of a wrong
 stylesheet link, so let's include it anyway.
 
@@ -108,9 +108,9 @@ jobs:
 
 You can now commit this file and push this and all previous changes to GitHub.
 
-Because the repository now includes this workflow, pushing to the `main` branch
-will trigger a custom build instead of a standard one, and the generated `_site`
-directory will be pushed to the `gh-pages` branch.
+Since your repository now includes the above workflow, pushing to the `main`
+branch will trigger a custom build instead of a standard one, and the generated
+`_site` directory will be pushed to the `gh-pages` branch.
 
 A couple notes about that branch:
 
@@ -124,7 +124,7 @@ uses that name, and since our workflow relies on it, that's what we'll use.
 ## Step 4: configure GitHub Pages
 
 Open your repository on GitHub and navigate to Settings > Pages. In the **Build
-and deployment** section there are two dropdown controlls: __Source__ and
+and deployment** section there are two dropdown controls: __Source__ and
 __Branch__. Make sure their values are set to __Deploy from a branch__ and
 __gh-pages__ respectively.
 
