@@ -1,6 +1,6 @@
 ---
 ---
-@import 'molokai.css';
+@import url('molokai.css');
 
 @tailwind base;
 @tailwind components;
