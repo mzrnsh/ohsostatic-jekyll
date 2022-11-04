@@ -4,9 +4,8 @@ title: How to use Tailwind CSS with Jekyll on GitHub Pages
 category: deployment
 tags: hosting deployment github-pages tailwind postcss
 date: 2022-10-31
-image:
-  file: tailwind_gh-pages.png
-  alt: Jekyll and Tailwind CSS logos
+image: assets/img/tailwind_gh-pages.png
+image_alt: Jekyll and Tailwind CSS logos
 ---
 
 __OhSoStatic Jekyll__ is built with Jekyll, styled with Tailwind CSS, and hosted

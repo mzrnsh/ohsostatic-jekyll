@@ -4,6 +4,7 @@ title: 'OhSoStatic Jekyll'
 
 plugins:
   - jekyll-postcss
+  - jekyll-seo-tag
 
 permalink: /:categories/:title
 

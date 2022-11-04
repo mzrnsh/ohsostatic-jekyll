@@ -11,7 +11,9 @@ layout: default
       my-8 inline-flex flex-col p-4 rounded-md
       text-slate-200 backdrop-blur-md bg-slate-900/30
     ">
-      <h1 class="text-white text-2xl font-normal leading-7 sm:text-3xl sm:tracking-tight">
+      <h1 class="
+        text-white text-2xl font-normal leading-7 sm:text-3xl sm:tracking-tight
+      ">
         Conquer
 
         <span class="text-rose-400">
@@ -81,8 +83,8 @@ layout: default
             </div>
 
             <img
-              src="{{ 'assets/img/' | append: post.image.file | relative_url }}"
-              alt="{{ post.image.alt }}"
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.image_alt }}"
               class="
                 sm:col-span-4 md:col-span-3 order-0 sm:order-2 shadow rounded-md object-cover w-full aspect-[3/2]
                 block
