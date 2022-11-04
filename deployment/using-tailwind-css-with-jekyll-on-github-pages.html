@@ -96,21 +96,23 @@
         Using Tailwind CSS with Jekyll on GitHub Pages
       </h1>
 
-      <p><strong>OhSoStatic Jekyll</strong> is built with Jekyll, styled with Tailwind CSS, and hosted
-on GitHub Pages. This setup doesn’t work out of box: Tailwind CSS requires
-PostCSS to compile, and because of this, it won’t be included in the default
-build produced by GitHub Pages. In this article we will discuss how to fix this
-via GitHub Actions.</p>
+      <p>This website is built with Jekyll, styled with Tailwind CSS, and hosted on
+GitHub Pages. That combination doesn’t quite work out of box. Tailwind CSS
+requires PostCSS to compile and while Jekyll has a PostCSS plugin, it’s not
+currently <a href="https://pages.github.com/versions/">whitelisted</a>, meaning Tailwind
+CSS won’t be included in the default build produced by GitHub Pages. Let’s fix
+this via GitHub Actions.</p>
 
 <h2 id="prerequisite-a-jekyll--tailwind-css-site-that-works-locally">Prerequisite: a Jekyll + Tailwind CSS site that works locally</h2>
 
-<p>I am assuming you already have a Tailwind CSS based Jekyll website that works
-fine on your local machine. Then you tried to deploy it to GitHub Pages and no
-styles were applied, and that’s why you are here. If this is not true, and
-you’re looking for general help on how to use Tailwind CSS with Jekyll, look no
-further than this <a href="https://mzrn.sh/2022/04/09/starting-a-blank-jekyll-site-with-tailwind-css-in-2022/" target="_blank">brilliant article</a>.</p>
+<p>This tutorial assumes you already have a working Jekyll + Tailwind CSS website
+that’s built with no issues locally, but when you try to deploy it to GitHub
+Pages, styles are not applied.</p>
 
-<h2 id="step-1-create-github-action">Step 1: create GitHub Action</h2>
+<p>If that’s not true and you’re looking for general help on how to use Tailwind
+CSS with Jekyll, look no further than this <a href="https://mzrn.sh/2022/04/09/starting-a-blank-jekyll-site-with-tailwind-css-in-2022/" target="_blank">brilliant article</a>.</p>
+
+<h2 id="step-1-create-a-github-action">Step 1: create a GitHub Action</h2>
 
 <p>…</p>
 

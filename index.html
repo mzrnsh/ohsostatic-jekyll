@@ -131,11 +131,12 @@
             </h2>
 
             <p>
-              <p><strong>OhSoStatic Jekyll</strong> is built with Jekyll, styled with Tailwind CSS, and hosted
-on GitHub Pages. This setup doesn’t work out of box: Tailwind CSS requires
-PostCSS to compile, and because of this, it won’t be included in the default
-build produced by GitHub Pages. In this article we will discuss how to fix this
-via GitHub Actions.</p>
+              <p>This website is built with Jekyll, styled with Tailwind CSS, and hosted on
+GitHub Pages. That combination doesn’t quite work out of box. Tailwind CSS
+requires PostCSS to compile and while Jekyll has a PostCSS plugin, it’s not
+currently <a href="https://pages.github.com/versions/">whitelisted</a>, meaning Tailwind
+CSS won’t be included in the default build produced by GitHub Pages. Let’s fix
+this via GitHub Actions.</p>
 
             </p>
 
