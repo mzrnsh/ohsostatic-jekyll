@@ -91,13 +91,14 @@
       my-12 prose max-w-none prose-slate lg:prose-lg prose-headings:font-medium
       prose-p:text-slate-300 prose-headings:text-slate-50
       prose-a:text-cyan-400 prose-strong:text-slate-300
+      prose-ol:text-slate-300 marker:text-inherit
     ">
       <h1>
         How to use Tailwind CSS with Jekyll on GitHub Pages
       </h1>
 
-      <p>This website is built with Jekyll, styled with Tailwind CSS, and hosted on
-GitHub Pages. That combination doesn’t quite work out of box. Tailwind CSS
+      <p><strong>OhSoStatic Jekyll</strong> is built with Jekyll, styled with Tailwind CSS, and hosted
+on GitHub Pages. That combination doesn’t quite work out of box. Tailwind CSS
 requires PostCSS to compile and while Jekyll has a PostCSS plugin, it’s not
 currently <a href="https://pages.github.com/versions/">whitelisted</a>, meaning Tailwind
 CSS won’t be included in the default build produced by GitHub Pages. Let’s fix
@@ -106,26 +107,91 @@ this via GitHub Actions.</p>
 <h2 id="prerequisite-a-jekyll--tailwind-css-site-that-works-locally">Prerequisite: a Jekyll + Tailwind CSS site that works locally</h2>
 
 <p>This tutorial assumes you already have a working Jekyll + Tailwind CSS website
-that’s built with no issues locally, but when you try to deploy it to GitHub
+that’s successfully built locally, but when you try to deploy it to GitHub
 Pages, styles are not applied.</p>
 
 <p>If that’s not true and you’re looking for general help on how to use Tailwind
 CSS with Jekyll, look no further than this <a href="https://mzrn.sh/2022/04/09/starting-a-blank-jekyll-site-with-tailwind-css-in-2022/" target="_blank">brilliant article</a>.</p>
 
-<h2 id="step-1-create-a-github-action">Step 1: create a GitHub Action</h2>
+<h2 id="step-1-create-a-github-workflow">Step 1: create a GitHub Workflow</h2>
 
-<p>…</p>
+<p>Create a new YAML file in <code class="language-plaintext highlighter-rouge">.github/workflows/</code> directory. Since it’s all about
+GitHub Pages, let’s call it <code class="language-plaintext highlighter-rouge">github-pages.yml</code>. This is the contents for your
+file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/github-pages.yml</span>
+
+<span class="na">name</span><span class="pi">:</span> <span class="s">Build and deploy this site to GitHub Pages</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">github-pages</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">ruby-version</span><span class="pi">:</span> <span class="m">3.1</span>
+          <span class="na">bundler-cache</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Setup Node</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">node-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">18'</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build site</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">limjh16/jekyll-action-ts@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">enable_cache</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./_site</span>
+</code></pre></div></div>
+
+<p>Now commit this file and push to GitHub.</p>
+
+<p>Because the repository now includes this workflow, pushing to the <code class="language-plaintext highlighter-rouge">main</code> branch
+will trigger a custom build instead of a standard one, and the generated <code class="language-plaintext highlighter-rouge">_site</code>
+directory will be pushed to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</p>
+
+<p>A couple notes about that branch:</p>
+
+<ol>
+  <li>It will be created and updated automatically by this workflow. No need to
+create it manually now, or ever push to it directly in future.</li>
+  <li>There’s nothing special about the name <code class="language-plaintext highlighter-rouge">gh-pages</code>. Unlike the past, GitHub
+Pages can now work with <em>any</em> branch. It’s just the GitHub action
+<code class="language-plaintext highlighter-rouge">peaceiris/actions-gh-pages</code> we rely on uses that name, so we’ll go with it.</li>
+</ol>
 
 <h2 id="step-2-configure-github-pages">Step 2: configure GitHub Pages</h2>
 
-<p>…</p>
+<p>Open your repository on GitHub and navigate to Settings &gt; Pages. In the <strong>Build
+and deployment</strong> section there are two dropdown controlls: <strong>Source</strong> and
+<strong>Branch</strong>. Make sure their values are set to <strong>Deploy from a branch</strong> and
+<strong>gh-pages</strong> respectively.</p>
+
+<p>That’s it: if this article is correct and you did everything according to it,
+your Jekyll website should now look the same on GitHub Pages as it looks on your
+machine.</p>
+
+<p>It may seem confusing that we are <em>not</em> selecting the <strong>GitHub Actions</strong> option
+in <strong>Source</strong>, but we don’t need to: as far as GitHub Pages is concerned we are
+telling it to deploy a normal branch that contains a pre-built static website.
+It doesn’t even know (or care) that the website was built with Jekyll, or that
+it was styled via Tailwind CSS.</p>
 
     </article>
   </div>
 </main>
 
 
-    <hr class="border-slate-700">
+    <hr class="border-rose-900">
 
     <footer class="p-4 max-w-5xl mx-auto text-sm text-center">
       <p>
