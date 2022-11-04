@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 article div.highlight {
-  @apply p-4 text-sm rounded-lg shadow-inner;
+  @apply p-4 text-sm rounded-lg shadow-inner overflow-x-scroll;
 }
 
 article code.language-plaintext {
