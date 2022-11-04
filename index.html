@@ -14,11 +14,15 @@ layout: default
       <h1 class="text-white text-2xl font-normal leading-7 sm:text-3xl sm:tracking-tight">
         Conquer
 
-        <span class="text-rose-400">Jekyll</span>
+        <span class="text-rose-400">
+          Jekyll
+        </span>
 
         step by step with
 
-        <span class="text-cyan-400">OhSoStatic</span>
+        <span class="text-cyan-400">
+          OhSoStatic
+        </span>
       </h1>
 
       <h2 class="mt-2 text-lg leading-7 sm:text-xl sm:tracking-tight">
@@ -28,55 +32,66 @@ layout: default
   </section>
 </div>
 
-<main class="p-4 max-w-5xl mx-auto">
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <article class="text-sm my-12 grid grid-cols-10 gap-12">
-          <div class="col-span-7">
-            <time class="mb-3 pl-3 block relative" datetime="{{ post.date | date: '%F' }}">
-              <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-                <span class="h-4 w-0.5 rounded-full bg-slate-200 dark:bg-slate-500">
-                </span>
+<div class="bg-slate-800">
+  <main class="p-4 max-w-5xl mx-auto">
+    <ul>
+      {% for post in site.posts %}
+        <li class="-m-4 p-4">
+          <article class="relative text-sm my-12 grid grid-cols-10 gap-12 items-center">
+            <a href="{{ post.url | relative_url }}" class="
+              absolute w-[calc(100%+2rem)] -left-4 h-[calc(100%+2rem)] -t-4
+              lg:rounded-lg bg-white opacity-0 hover:opacity-5
+              transition-opacity duration-75
+            ">
+              <span class="sr-only">
+                Navigate to article
               </span>
+            </a>
 
-              {{ post.date | date: '%B %e, %Y' }}
-            </time>
-
-            <h2 class="text-slate-100 text-base font-medium tracking-tight my-3">
-              {{ post.title }}
-            </h2>
-
-            <p>
-              {{ post.excerpt }}
-            </p>
-
-            <div class="block mt-4">
-              <a
-                href="{{ post.url | relative_url }}"
-                class="font-normal text-cyan-500 hover:text-cyan-400"
-              >
-                <span class="inline-flex gap-1">
-                  Read article
-
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                  </svg>
+            <div class="col-span-7">
+              <time class="mb-3 pl-3 block relative" datetime="{{ post.date | date: '%F' }}">
+                <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
+                  <span class="h-4 w-0.5 rounded-full bg-slate-200 dark:bg-slate-500">
+                  </span>
                 </span>
-              </a>
-            </div>
-          </div>
 
-          <a href="{{ post.url | relative_url }}" class="col-span-3">
+                {{ post.date | date: '%B %e, %Y' }}
+              </time>
+
+              <h2 class="text-slate-100 text-base font-medium tracking-tight my-3">
+                {{ post.title }}
+              </h2>
+
+              <p>
+                {{ post.excerpt }}
+              </p>
+
+              <div class="block mt-4">
+                <a
+                  href="{{ post.url | relative_url }}"
+                  class="font-normal text-cyan-500 hover:text-cyan-400"
+                >
+                  <span class="inline-flex gap-1">
+                    Read article
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                      <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+
             <img
               src="{{ 'assets/img/' | append: post.image.file | relative_url }}"
-              class="rounded-md shadow-md object-cover w-full aspect-[3/2] block"
+              class="col-span-3 shadow rounded-md object-cover w-full aspect-[3/2] block"
               alt="{{ post.image.alt }}"
             >
-          </a>
-        </article>
-      </li>
-    {% endfor %}
-  </ul>
-</main>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
+</div>
+
 
