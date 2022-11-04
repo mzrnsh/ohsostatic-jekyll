@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Tailwind CSS with Jekyll on GitHub Pages
+title: How to use Tailwind CSS with Jekyll on GitHub Pages
 category: deployment
 tags: hosting deployment github-pages tailwind postcss
 date: 2022-10-31
