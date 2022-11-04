@@ -12,9 +12,9 @@ image:
 __OhSoStatic Jekyll__ is built with Jekyll, styled with Tailwind CSS, and hosted
 on GitHub Pages. That combination doesn't quite work out of box. Tailwind CSS
 requires PostCSS to compile and while Jekyll has a PostCSS plugin, it's not
-currently [whitelisted](https://pages.github.com/versions/), meaning Tailwind
-CSS won't be included in the default build produced by GitHub Pages. Let's fix
-this via GitHub Actions.
+currently [whitelisted](https://pages.github.com/versions/){:target="_blank"},
+meaning Tailwind CSS won't be included in the default build produced by GitHub
+Pages. Let's fix this via GitHub Actions.
 
 ## Prerequisite: a Jekyll + Tailwind CSS site that works locally
 
