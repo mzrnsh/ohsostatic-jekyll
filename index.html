@@ -92,7 +92,7 @@
     <ul>
       
         <li class="-m-4 p-4">
-          <article class="relative text-sm my-12 grid grid-cols-10 gap-12 items-center">
+          <article class="relative text-sm my-12 grid sm:grid-cols-10 gap-12 items-center">
             <a href="/deployment/how-to-use-tailwind-css-with-jekyll-on-github-pages" class="
               absolute w-[calc(100%+2rem)] -left-4 h-[calc(100%+2rem)] -t-4
               lg:rounded-lg bg-white opacity-0 hover:opacity-5
@@ -103,7 +103,7 @@
               </span>
             </a>
 
-            <div class="col-span-7">
+            <div class="order-1 sm:col-span-6 md:col-span-7">
               <time class="mb-3 pl-3 block relative" datetime="2022-10-31">
                 <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
                   <span class="h-4 w-0.5 rounded-full bg-slate-200 dark:bg-slate-500">
@@ -117,15 +117,13 @@
                 How to use Tailwind CSS with Jekyll on GitHub Pages
               </h2>
 
-              <p>
-                <p><strong>OhSoStatic Jekyll</strong> is built with Jekyll, styled with Tailwind CSS, and hosted
+              <p><strong>OhSoStatic Jekyll</strong> is built with Jekyll, styled with Tailwind CSS, and hosted
 on GitHub Pages. That combination doesn’t quite work out of box. Tailwind CSS
 requires PostCSS to compile and while Jekyll has a PostCSS plugin, it’s not
 currently <a href="https://pages.github.com/versions/" target="_blank">whitelisted</a>,
 meaning Tailwind CSS won’t be included in the default build produced by GitHub
 Pages. Let’s fix this via GitHub Actions.</p>
 
-              </p>
 
               <div class="block mt-4">
                 <a
@@ -145,8 +143,11 @@ Pages. Let’s fix this via GitHub Actions.</p>
 
             <img
               src="/assets/img/tailwind_gh-pages.png"
-              class="col-span-3 shadow rounded-md object-cover w-full aspect-[3/2] block"
               alt="Jekyll and Tailwind CSS logos"
+              class="
+                sm:col-span-4 md:col-span-3 order-0 sm:order-2 shadow rounded-md object-cover w-full aspect-[3/2]
+                block
+              "
             >
           </article>
         </li>
