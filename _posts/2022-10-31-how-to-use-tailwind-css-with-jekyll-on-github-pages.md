@@ -117,9 +117,9 @@ A couple notes about that branch:
 1. It will be created and updated automatically by the workflow. You don't need
 to create it manually now and you won't ever need to push to it directly in
 future.
-2. Branch name `gh-pages` is not as magical as it used to be: GitHub
-Pages can now work with _any_ branch. But the GitHub action `peaceiris/actions-gh-pages`
-uses that name, and since our workflow relies on it, that's what we'll go with.
+2. There's nothing special about the name `gh-pages` [any more]: GitHub Pages
+can now work with _any_ branch. But the GitHub action `peaceiris/actions-gh-pages`
+uses that name, and since our workflow relies on it, that's what we'll use.
 
 ## Step 4: configure GitHub Pages
 
