@@ -1,6 +1,6 @@
 {
   "files.associations": {
-    "*.html": "liquid"
+    "*.html": "jekyll"
   },
   "cSpell.words": [
     "limjh",
